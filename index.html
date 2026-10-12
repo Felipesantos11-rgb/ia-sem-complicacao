@@ -1,0 +1,396 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101510">
+  <meta name="description" content="Aprenda a usar inteligência artificial com exemplos práticos, prompts e um desafio de 7 dias.">
+  <title>IA Sem Complicação | Guia Prático</title>
+
+  <style>
+    :root {
+      --bg: #101510;
+      --panel: #19221b;
+      --green: #a6f36b;
+      --text: #f5f7f2;
+      --muted: #b9c5b9;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.65;
+    }
+
+    a { color: inherit; }
+
+    .container {
+      width: min(1080px, 91%);
+      margin: auto;
+    }
+
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid #283329;
+    }
+
+    .brand {
+      color: var(--green);
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .hero {
+      padding: 65px 0 55px;
+      text-align: center;
+    }
+
+    .tag {
+      display: inline-block;
+      border: 1px solid #49643d;
+      border-radius: 50px;
+      padding: 5px 13px;
+      color: var(--green);
+      font-size: 13px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 8vw, 64px);
+      line-height: 1.08;
+      margin: 22px 0;
+      letter-spacing: -1.5px;
+    }
+
+    h1 span, h2 span { color: var(--green); }
+
+    .intro {
+      max-width: 650px;
+      margin: 0 auto 25px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .cover {
+      width: min(260px, 75%);
+      margin: 35px auto;
+      padding: 32px 20px;
+      background: linear-gradient(145deg, #253729, #101510);
+      border: 1px solid #527344;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px #0006;
+      transform: rotate(-2deg);
+    }
+
+    .cover small {
+      color: var(--green);
+      letter-spacing: 2px;
+    }
+
+    .cover strong {
+      display: block;
+      font-size: 32px;
+      line-height: 1.1;
+      margin: 24px 0;
+    }
+
+    .cover p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--green);
+      color: #101510;
+      text-decoration: none;
+      font-weight: 800;
+      padding: 15px 24px;
+      border-radius: 10px;
+      margin: 8px 0;
+      width: min(100%, 340px);
+      transition: transform .2s;
+    }
+
+    .button:hover { transform: translateY(-2px); }
+
+    .note {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    section { padding: 48px 0; }
+
+    h2 {
+      font-size: clamp(27px, 5vw, 40px);
+      line-height: 1.2;
+      margin-top: 0;
+    }
+
+    .center { text-align: center; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .card {
+      padding: 22px;
+      background: var(--panel);
+      border: 1px solid #2d3b2e;
+      border-radius: 14px;
+    }
+
+    .card .icon {
+      font-size: 27px;
+    }
+
+    .card h3 { margin-bottom: 8px; }
+
+    .card p, .muted { color: var(--muted); }
+
+    .example {
+      background: #19221b;
+      border-left: 4px solid var(--green);
+      border-radius: 8px;
+      padding: 22px;
+      text-align: left;
+      overflow-wrap: anywhere;
+    }
+
+    .price {
+      font-size: 43px;
+      font-weight: 850;
+      color: var(--green);
+      margin: 12px 0;
+    }
+
+    .offer {
+      max-width: 550px;
+      margin: auto;
+      border: 1px solid #527344;
+      border-radius: 18px;
+      padding: 28px;
+      background: linear-gradient(145deg, #1b281d, #141a15);
+    }
+
+    ul { padding-left: 22px; }
+    li { margin: 9px 0; }
+
+    details {
+      background: var(--panel);
+      padding: 17px;
+      margin: 10px 0;
+      border-radius: 10px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    footer {
+      border-top: 1px solid #283329;
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    footer a { color: var(--green); }
+
+    @media (max-width: 480px) {
+      .hero { padding-top: 45px; }
+      .intro { font-size: 16px; }
+      section { padding: 35px 0; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container brand">IA SEM COMPLICAÇÃO</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="tag">GUIA PRÁTICO PARA INICIANTES</span>
+
+        <h1>Use a IA para transformar suas <span>ideias em ação.</span></h1>
+
+        <p class="intro">
+          Aprenda a usar inteligência artificial para criar conteúdos,
+          organizar estudos, melhorar textos e desenvolver ideias para
+          pequenos negócios, mesmo começando do zero.
+        </p>
+
+        <div class="cover" aria-label="Capa ilustrativa do ebook">
+          <small>GUIA DIGITAL</small>
+          <strong>IA SEM<br>COMPLICAÇÃO</strong>
+          <p>Prompts, exemplos e desafios práticos</p>
+          <div style="font-size:38px">✳</div>
+        </div>
+
+        <a class="button" href="#comprar">QUERO CONHECER O EBOOK ↓</a>
+        <p class="note">Material digital • Leia no celular ou computador</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2 class="center">O que você vai <span>aprender</span></h2>
+
+        <div class="grid">
+          <article class="card">
+            <div class="icon">🤖</div>
+            <h3>Entenda a IA</h3>
+            <p>Conheça os fundamentos e aprenda a fazer pedidos mais claros.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">📱</div>
+            <h3>Crie conteúdo</h3>
+            <p>Pratique ideias para posts, legendas e vídeos curtos.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">📝</div>
+            <h3>Melhore seus textos</h3>
+            <p>Organize currículos, mensagens e apresentações com sua experiência real.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">💡</div>
+            <h3>Organize ideias</h3>
+            <p>Use a IA como apoio para estudos, tarefas e pequenos negócios.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>Aprenda com <span>exemplos práticos</span></h2>
+        <p class="muted">
+          Você não precisa decorar comandos. Aprenda a adaptar os pedidos
+          à sua necessidade.
+        </p>
+
+        <div class="example">
+          <strong>Exemplo de prompt</strong>
+          <p>
+            “Crie três ideias de vídeos curtos para divulgar [produto].
+            Para cada ideia, sugira uma abertura, três cenas e uma legenda.
+            Não invente preços, avaliações nem promessas.”
+          </p>
+          <p class="note">Troque [produto] pelo seu próprio assunto.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2 class="center">O que está incluído</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>📘 Guia digital</h3>
+            <p>Capítulos explicativos para quem está começando.</p>
+          </article>
+          <article class="card">
+            <h3>🧠 Biblioteca de prompts</h3>
+            <p>Modelos editáveis para diferentes tarefas.</p>
+          </article>
+          <article class="card">
+            <h3>📅 Desafio de 7 dias</h3>
+            <p>Atividades para praticar o que aprendeu.</p>
+          </article>
+        </div>
+        <p class="note">
+          Publique esta oferta somente quando todos os materiais anunciados
+          estiverem finalizados e incluídos no produto.
+        </p>
+      </div>
+    </section>
+
+    <section id="comprar">
+      <div class="container">
+        <div class="offer center">
+          <span class="tag">SEU PRÓXIMO PASSO</span>
+          <h2 style="margin-top:20px">IA Sem Complicação</h2>
+          <p class="muted">
+            Um guia para aprender, testar e adaptar ao seu dia a dia.
+          </p>
+          <div class="price">R$ 19,90</div>
+          <p class="muted">Pagamento e entrega digital pela Kiwify.</p>
+
+          <!-- SUBSTITUA O LINK ABAIXO PELO SEU CHECKOUT REAL -->
+          <a class="button" href="COLE_AQUI_SEU_LINK_KIWIFY">
+            QUERO COMPRAR
+          </a>
+
+          <p class="note">
+            O pagamento será realizado na página oficial de checkout.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>Perguntas frequentes</h2>
+
+        <details>
+          <summary>Preciso entender de tecnologia?</summary>
+          <p class="muted">
+            Não. O guia foi pensado para iniciantes e utiliza exemplos
+            que você pode adaptar.
+          </p>
+        </details>
+
+        <details>
+          <summary>Posso usar pelo celular?</summary>
+          <p class="muted">
+            Sim. Você pode ler o ebook em um celular ou computador e usar
+            ferramentas de IA compatíveis com seu dispositivo.
+          </p>
+        </details>
+
+        <details>
+          <summary>Vou ganhar dinheiro usando IA?</summary>
+          <p class="muted">
+            Não há garantia de renda. O material ensina usos práticos
+            da tecnologia, mas resultados dependem de vários fatores.
+          </p>
+        </details>
+
+        <details>
+          <summary>Como recebo o material?</summary>
+          <p class="muted">
+            A entrega será feita conforme o método configurado no produto
+            da Kiwify. Confira o acesso e as instruções antes de publicar.
+          </p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>IA Sem Complicação • Material educativo independente.</p>
+      <p>Revise as respostas das ferramentas de IA antes de utilizá-las.</p>
+      <p>Contato: <a href="mailto:SEU_EMAIL_AQUI">SEU_EMAIL_AQUI</a></p>
+      <p>© 2026 • Todos os direitos reservados ao autor.</p>
+    </div>
+  </footer>
+</body>
+</html>
+
